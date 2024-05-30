@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>IndexedDB</title>
+    <style>
+        :root {
+            --BColor-body: #22272e;
+            --BColor-header: #1c2128;
+            --BColor-footer: #2d333b;
+            --TColor-title: #c5d1de;
+            --TColor-text: #778491;
+            --BColor-btn: #373e47;
+            --BColor-border: #444c56;
+
+            --Font-size: 13px;
+        }
+
+        [theme=dark] {
+            --BColor-body: #22272e;
+            --BColor-header: #1c2128;
+            --BColor-footer: #2d333b;
+            --TColor-title: #c5d1de;
+            --TColor-text: #778491;
+            --BColor-btn: #373e47;
+            --BColor-border: #444c56;
+        }
+        [theme=normal] {
+            --BColor-body: #22272e;
+            --BColor-header: #1c2128;
+            --BColor-footer: #2d333b;
+            --TColor-title: #c5d1de;
+            --TColor-text: #778491;
+            --BColor-btn: #373e47;
+            --BColor-border: #444c56;
+        }
+
+        html {
+            color-scheme: dark;
+            background-color: var(--BColor-body);
+            font-family: "IBM Plex Sans", sans-serif;
+            font-style: normal;
+            font-size: var(--Font-size);
+        }
+
+        .box {
+            background-color: var(--BColor-footer);
+            border: 1px solid var(--BColor-border);
+            width: calc(100% - 2rem);
+            max-width: min(600px, 90%);
+            padding: clamp(1rem, 2vw, 3rem);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Formulario de Registro</h2>
+    <form id="userForm">
+        <fieldset>
+            <legend>Nombres y apellidos</legend>
+            <label for="userName">Nombre:</label>
+            <input type="text" id="userName" name="userName" required>
+
+            <label for="userSurname">Apellido:</label>
+            <input type="text" id="userSurname" name="userSurname" required>
+        
+            <label for="userBirthdate">Fecha de Nacimiento:</label>
+            <input type="date" id="userBirthdate" name="userBirthdate" required>
+
+        </fieldset>
+        <fieldset>
+            <legend>Contacto</legend>    
+            <label for="userPhone">Número de Celular:</label>
+            <input type="text" id="userPhone" name="userPhone" require>
+            <label for="userCountry">País:</label>
+            <input type="text" id="userCountry" name="userCountry" required>
+            <label for="userAddress">Dirección:</label>
+            <input type="text" id="userAddress" name="userAddress" required>
+        </fieldset>
+        <button type="button" id="addUser">Agregar Usuario</button>
+        <button type="button" id="editUser">Editar Usuario</button>
+        <button type="button" id="deleteUser">Eliminar Usuario</button>
+        <button type="button" id="findUser">Buscar Usuario</button>
+        <button type="button" id="listUsers">Listar Usuarios</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <div id="results"></div>
+
+    <script src="BDRL.js"></script>
+</body>
+
+</html>
